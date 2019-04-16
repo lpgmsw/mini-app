@@ -1,0 +1,130 @@
+* {
+  box-sizing: border-box;
+}
+.wrapper{
+  display: flex;
+}
+.main {
+  height: 100vh;
+  width: calc(100vw - 300px);
+  flex-direction: column;
+}
+
+.main__upper {
+  background-color: $main-color-u;
+  height: 100px;
+  display: flex;
+  padding: 0px 40px;
+}
+
+.main__upper--roomName {
+  font-size: 20px;
+  margin-top: 35px;
+  color: $font-color-blackgray;
+}
+
+.main__upper--roomMember {
+  font-size: 12px;
+  margin-top: 15px;
+  color: $font-color-gray;
+}
+
+.main__upper--link {
+  padding: 0px 40px;
+  margin-right: 0px;
+  margin-left: auto;
+}
+
+.main__upper--btn {
+  font-size: 20px;
+  display: inline-block;
+  text-decoration: none;
+  text-align: center;
+  margin-top: 28px;
+  padding: 0px 20px;
+  border: solid 2px $button-color-lightblue;
+  line-height: 40px;
+  a{
+  color: $button-color-lightblue;
+  text-decoration: none;
+  }
+  &:hover {
+    background: $button-color-lightblue;
+    color: $font-color-white;
+  }
+}
+
+.main__contents {
+  background-color: $main-color-c;
+  height: calc(100vh - 190px);
+  padding: 46px 40px;
+  border: medium solid $font-color-plaegray;
+  overflow: scroll;
+}
+
+.main__contents--text {
+  margin-bottom: 10px;
+  display: flex;
+}
+
+.main__contents--textName {
+  color: $font-color-blackblue;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.main__contents--textDate {
+  color: $font-color-gray;
+  font-size: 12px;
+  margin-left: 10px;
+}
+
+.main__contents--textComment {
+  color: $font-color-blackblue;
+  font-size: 14px;
+}
+
+#inputText {
+  background-color: $main-color-b;
+  height: 90px;
+  display: flex;
+  padding: 0px 40px;
+}
+#inputText__textBox {
+  display: flex;
+  margin-top: 28px;
+  box-sizing: border-box;
+  width: 100%;
+  position: relative;
+}
+.inputText__textBox-text {
+  height: 50px;
+  width: 100%;
+  padding: 0px 40px 0px 10px;
+}
+input::placeholder {
+  color: $font-color-blackblue;
+  font-size: 16px;
+}
+.inputText__textBox-image{
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  cursor: pointer;
+}
+#text_image.inputText__textBox-file{
+  display: none;
+}
+.inputText__btn {
+  height: 50px;
+  width: 100px;
+  font-size: 20px;
+  display: inline-block;
+  text-decoration: none;
+  color: $font-color-white;
+  text-align: center;
+  margin-top: 28px;
+  margin-left: 15px;
+  border: solid 2px $button-color-lightblue;
+  background: $button-color-lightbbrilliantcyan;
+}
