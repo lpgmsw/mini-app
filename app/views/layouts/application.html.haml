@@ -14,19 +14,19 @@
     %script{:crossorigin => "anonymous", :integrity => "sha256-DYZMCC8HTC+QDr5QNaIcfR7VSPtcISykd+6eSmBW5qo=", :src => "https://code.jquery.com/jquery-3.4.0.js"}
 
   %body
-%nav.teal.accent-4{:class => "#00bfa5"}
-  .nav-wrapper
-    %a.brand-logo{:href => "#"} Logo
-    %ul#nav-mobile.right.hide-on-med-and-down
-      - if user_signed_in?
-        %li
-          %a{:href => "badges.html"} New
-        %li
-          = link_to "sign out", destroy_user_session_path, method: :delete
-      - else
-        %li
-          %a{:href => "badges.html"} New
-        %li
-          = link_to "sign in", new_session_path(resource_name)
+  %nav.teal.accent-4{:class => "#00bfa5"}
+    .nav-wrapper
+      %a.brand-logo{:href => "#"} Logo
+      %ul#nav-mobile.right.hide-on-med-and-down
+        - if user_signed_in?
+          %li
+            = link_to "New", new_blog_path
+          %li
+            = link_to "sign out", destroy_user_session_path, method: :delete
+        - else
+          %li
+            = link_to "New", new_blog_path
+          %li
+            = link_to "sign in", new_session_path(resource_name)
 
-    = yield
+  = yield
