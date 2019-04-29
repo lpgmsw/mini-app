@@ -1,2 +1,8 @@
 - @blogs.each do |blog|
-  %p=blog.text
+  .row
+    .col.s12.m6.offset-m3.red-text
+      .card
+        .card-content
+          %p=blog.text
+        .action
+          %p="仮置き"
