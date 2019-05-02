@@ -1,7 +1,7 @@
 class BlogsController < ApplicationController
 
   def index
-    @blogs = Blog.order("created_at DESC").page(params[:page]).per(5)
+    @blogs = Blog.includes(:user).order("created_at DESC").page(params[:page]).per(5)
   end
 
   def new
@@ -10,7 +10,6 @@ class BlogsController < ApplicationController
 
   def create
     Blog.create(blog_params)
-    binding.pry
     redirect_to action: :index
   end
 
