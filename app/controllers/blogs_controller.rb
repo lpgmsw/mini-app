@@ -10,11 +10,12 @@ class BlogsController < ApplicationController
 
   def create
     Blog.create(blog_params)
+    binding.pry
     redirect_to action: :index
   end
 
   private
   def blog_params
-    params.require(:blog).permit(:text)
+    params.require(:blog).permit(:name, :text).merge(user_id: current_user.id)
   end
 end
