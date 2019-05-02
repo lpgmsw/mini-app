@@ -2,7 +2,8 @@
   .row
     .col.s12.m6.offset-m3.red-text
       .card
+        .card-title
+          %p=blog.user.name
         .card-content
           %p=blog.text
-        .action
-          %p=blog.user_id
+        .card-action
