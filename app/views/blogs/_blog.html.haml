@@ -1,9 +1,10 @@
 - @blogs.each do |blog|
   .row
-    .col.s12.m6.offset-m3.red-text
-      .card
+    .col.s12.m6.offset-m3
+      .card{"data-blog-id": "#{blog.id}"}
         .card-title
           %p=blog.user.name
         .card-content
           %p=blog.text
         .card-action
+          = link_to '削除', blog_path(blog.id), method: "delete", remote: true, class: "delete_btn" if blog.user_id == current_user.id

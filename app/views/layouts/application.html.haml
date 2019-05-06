@@ -11,12 +11,12 @@
 
     %script{:src => "https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"}
 
-    %script{:crossorigin => "anonymous", :integrity => "sha256-DYZMCC8HTC+QDr5QNaIcfR7VSPtcISykd+6eSmBW5qo=", :src => "https://code.jquery.com/jquery-3.4.0.js"}
+    / %script{:crossorigin => "anonymous", :integrity => "sha256-DYZMCC8HTC+QDr5QNaIcfR7VSPtcISykd+6eSmBW5qo=", :src => "https://code.jquery.com/jquery-3.4.0.js"}
 
   %body
   %nav.teal.accent-4{:class => "#00bfa5"}
     .nav-wrapper
-      %a.brand-logo{:href => "#"} Logo
+      %a.brand-logo.center{:href => "#"} Mini APP
       %ul#nav-mobile.right.hide-on-med-and-down
         - if user_signed_in?
           %li
