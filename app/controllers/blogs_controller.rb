@@ -26,6 +26,13 @@ class BlogsController < ApplicationController
     @blog = Blog.find(params[:blog_id])
   end
 
+  def update
+    blog = Blog.find(params[:blog_id])
+    if blog.user_id == current_user.id
+      blog.update(blog_params)
+    end
+  end
+
   private
   def blog_params
     params.require(:blog).permit(:name, :text).merge(user_id: current_user.id)
