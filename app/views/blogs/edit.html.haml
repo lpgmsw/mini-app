@@ -1,0 +1,14 @@
+.contents
+  .form
+    = form_for(@blog) do |f|
+      .field
+        .field-label
+          = f.label :name
+        .field-input_readonly
+          = current_user.name
+        .field-label
+          = f.label :text
+        .field-input_readonly
+          = f.text_field :text
+        .actions
+          = f.submit 'Update', class: 'form__submit'
