@@ -1,0 +1,1 @@
+json.blogs Blog.all

@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   devise_for :users
   root 'blogs#index'
-  # get 'blogs' => 'blogs#index'
-  resources :blogs
+  post "blogs/:blog_id" => "blogs#destroy"
+  resources :blogs, only: [:create, :new, :index, :destroy]
   resources :users, only: [:edit, :update]
 end
