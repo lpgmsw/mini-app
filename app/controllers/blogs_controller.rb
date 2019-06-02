@@ -12,7 +12,11 @@ class BlogsController < ApplicationController
 
   def create
     Blog.create(blog_params)
-    redirect_to action: :index
+    @blogs = Blog.includes(:user).order("created_at DESC").page(params[:page]).per(5)
+    respond_to do |format|
+      format.html
+      format.js
+    end
   end
 
   def destroy
