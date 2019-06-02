@@ -22,9 +22,10 @@ class BlogsController < ApplicationController
   def destroy
     @blog = Blog.find(params[:id])
     @blog.destroy
+    @blogs = Blog.includes(:user).order("created_at DESC").page(params[:page]).per(5)
     respond_to do |format|
       format.html
-      format.json
+      format.js
     end
   end
 
