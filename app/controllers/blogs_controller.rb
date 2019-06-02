@@ -19,8 +19,8 @@ class BlogsController < ApplicationController
     @blog = Blog.find(params[:id])
     @blog.destroy
     respond_to do |format|
-      format.json
       format.html
+      format.json
     end
   end
 
@@ -29,7 +29,7 @@ class BlogsController < ApplicationController
   end
 
   def update
-    blog = Blog.find(params[:blog_id])
+    @blog = Blog.find(params[:blog_id])
     if blog.user_id == current_user.id
       blog.update(blog_params)
     end
