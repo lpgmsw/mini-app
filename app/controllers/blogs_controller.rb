@@ -12,15 +12,19 @@ class BlogsController < ApplicationController
 
   def create
     Blog.create(blog_params)
-    redirect_to action: :index
+    @blogs = Blog.includes(:user).order("created_at DESC").page(params[:page]).per(5)
+    respond_to do |format|
+      format.html
+      format.js
+    end
   end
 
   def destroy
     @blog = Blog.find(params[:id])
     @blog.destroy
     respond_to do |format|
-      format.json
       format.html
+      format.json
     end
   end
 
@@ -29,7 +33,7 @@ class BlogsController < ApplicationController
   end
 
   def update
-    blog = Blog.find(params[:blog_id])
+    @blog = Blog.find(params[:blog_id])
     if blog.user_id == current_user.id
       blog.update(blog_params)
     end

@@ -8,7 +8,7 @@ $(function(){
       $.ajax({
         url: url,
         type: 'POST',
-        data: {'id': blog_id, '_method': 'DLETE'},
+        data: {'id': blog_id, '_method': 'DELETE'},
         dataType: 'json'
       })
       .done(function(data) {
@@ -19,4 +19,6 @@ $(function(){
       })
     }
   });
+
+
 });

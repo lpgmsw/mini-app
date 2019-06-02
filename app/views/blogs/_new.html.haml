@@ -1,0 +1,14 @@
+.contents
+  .form
+    = form_for(@blog, remote: true) do |f|
+      .field
+        .field-label
+          = f.label :name
+        .field-input_readonly
+          = f.text_field :text, readonly:true, placeholder: current_user.name
+        .field-label
+          = f.label :text
+        .field-input
+          = f.text_field :text, placeholder: 'type a text'
+        .actions
+          = f.submit 'Send', class: 'form__submit'
