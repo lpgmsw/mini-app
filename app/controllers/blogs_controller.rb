@@ -35,8 +35,11 @@ class BlogsController < ApplicationController
 
   def update
     @blog = Blog.find(params[:blog_id])
-    if blog.user_id == current_user.id
-      blog.update(blog_params)
+    @blog.update(blog_params)
+    @blogs = Blog.includes(:user).order("created_at DESC").page(params[:page]).per(5)
+    respond_to do |format|
+      format.html
+      format.js
     end
   end
 
