@@ -1,0 +1,7 @@
+= form_for(@blog) do |f|
+  .card-title
+    %p=@blog.user.name
+  .card-content
+    = f.text_area :text, placeholder: @blog.text
+  .card-action
+    = f.submit 'Update', class: 'form__submit'
