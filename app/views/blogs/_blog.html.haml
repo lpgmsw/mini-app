@@ -8,5 +8,5 @@
           %p=blog.text
         .card-action
           - if user_signed_in? && blog.user_id == current_user.id
-            = link_to '編集', edit_blog_path(blog.id), method: "get", class: "edit_btn"
+            = link_to '編集', edit_blog_path(blog.id), method: "get", remote: true, class: "edit_btn"
             = link_to '削除', blog_path(blog.id), method: "delete", remote: true, class: "delete_btn"
