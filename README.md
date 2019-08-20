@@ -18,8 +18,6 @@
   - JavaScript
 - デプロイ
   - heroku
-- 本番環境
-  - AWS
 - DB
   - PostgreSQL（11.2）
 - デザインフレームワーク
