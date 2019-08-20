@@ -1,24 +1,40 @@
-# README
+# ポートフォリオ（フリマアプリのクローンサイト）
+## 概要
+* メッセージ投稿サイト。
+* 非同期通信により、画面更新なしに投稿、編集、削除が可能。
+ <img width="500" alt="wugUQRE3J6kZgj51564408861" src="https://user-images.githubusercontent.com/47979613/63359830-5f29ae80-c3a8-11e9-8d87-2a2da18fc676.png">
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## アプリで使用している機能
+* メッセージ投稿機能
+* メッセージ編集機能
+* メッセージ削除機能
+* ページネーション機能（kaminari)
+* ユーザ新規登録、ログイン、ログアウト機能（devise)
 
-Things you may want to cover:
+## 使用技術
+- 開発言語/フレームワーク
+  - Ruby（2.3.7）/Ruby on Rails（5.0.7.2）
+  - Scss
+  - JavaScript
+- デプロイ
+  - heroku
+- 本番環境
+  - AWS
+- DB
+  - PostgreSQL（11.2）
+- デザインフレームワーク
+  - Materialize
 
-* Ruby version
+## なぜこのアプリを作ろうと思ったのか
+* 非同期通信を実装に取り入れたかったため。
 
-* System dependencies
+## 工夫点 
+* マークアップを簡素化し、処理の流れを把握しやすくしていること。
 
-* Configuration
+## 苦労した点
+* 非同期通信の実装方針毎に必要とされる記述を理解すること。
 
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+## 時間があれば実装したい点
+* 外部サイトのAPIを取り入れること。
+* 画像、もしくは動画投稿機能。
+* いいね機能。
